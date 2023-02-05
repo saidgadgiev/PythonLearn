@@ -42,7 +42,7 @@ def MatrRotation(matrix, n):
     MatrR = []
     for r in range (len(matrix)):
         lis = []
-        count = n-1
+        # count = n-1
         for c in range (len(matrix)):
             lis.append(matrix[count][r]) 
             count = count -1
@@ -52,8 +52,8 @@ def MatrRotation(matrix, n):
 def MatrDioganal(matrix):
     MatrR1 = []
     MatrR2 = []
+    count = len(matrix)-1
     for r in range(len(matrix)):
-        count = len(matrix)-1
         lis1 = []
         lis2 = []
         for c in range(len(matrix)):
