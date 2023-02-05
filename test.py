@@ -1,6 +1,4 @@
 
-n = 3
-
-print(str(n).ljust(5), end=' ')
-print('ab'.ljust(5))
-print('abc'.ljust(5))
+n = [["3", "4", "5", "6"], ["1", "2", "3", "4"]]
+n[0].reverse()
+print(n)

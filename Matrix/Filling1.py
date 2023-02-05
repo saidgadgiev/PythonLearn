@@ -25,11 +25,11 @@
 # 15 16 17 18 19 20 21
 # 22 23 24 25 26 27 28
 
-
-n, m = 4, 7
-s = 1
-for r in range(n):
-    for c in range(m):
-        print(str(s).ljust(2), end = ' ')
-        s = s+1
+s = "1 15".split()
+count = 1
+n,m = s[0], s[1]
+for r in range(int(n)):
+    for c in range(int(m)):
+        print(str(count).ljust(3), end = ' ')
+        count = count+1
     print()
