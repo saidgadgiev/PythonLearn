@@ -32,47 +32,13 @@ matrix = [["8", "1", "6"],
         ["3", "5", "7"],
         ["4", "9", "2"]
         ]
-patter = sum(matrix[0])
-
-def SumMath(matrix, patt, bul):
-    for r in range (len(matrix)):
-        if patt == sum(matrix[r]):
-            bul = "YES"
-        else:
-            bul = "NO"
-            break
-    return bul
-
-def MatrRotation(matrix, n):
-    MatrR = []
-    for r in range (len(matrix)):
-        lis = []
-        count = n-1
-        for c in range (len(matrix)):
-            lis.append(matrix[count][r]) 
-            count = count -1
-        MatrR.append(lis)
-    return MatrR
-
-def MatrDioganal(matrix):
-    MatrR1 = []
-    MatrR2 = []
-    for r in range(len(matrix)):
-        count = len(matrix)-1
-        lis1 = []
-        lis2 = []
-        for c in range(len(matrix)):
-            if r == c:
-                lis1.append(matrix[r][c])
-                print(lis1)
-            if c == count:
-                lis2.append(matrix[r][c])
-                print(lis2)
-                count = count -1
-        MatrR1.append(lis1)    
-        MatrR2.append(lis2)
-    MatrR1.append(MatrR2)
-    print (MatrR1)
+for r in range (len(matrix)):
+    for c in range(len(matrix)):
+        matrix[r][c] = int(matrix[r][c])
+def magic_square(matrix, cols):
+    sum_main_diag = 0
+    sum_semi_diag = 0
+    check = []
 
 
     for i in range(cols):                                # заполняем проверочный список всеми элементами матрицы
