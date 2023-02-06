@@ -21,9 +21,33 @@
 # 13 20 19 18 7
 # 12 11 10 9  8
 
-s = "3 3".split()
+s = "6 8".split()
 n,m = int(s[0]), int(s[1])
 
 
-matrix = [[0] * m for _ in range(n)] 
-print(matrix)
+matr = [[0] * m for _ in range(n)] 
+
+
+
+w = 1
+for k in range(min(n // 2 + 1, m //2 + 1)):  # количество оборотов
+    for j in range(k, m - k):  # заполнение вправо
+        if matr[k][j] == 0:  # условие избавляет от перезаписывания значений
+            matr[k][j] = w 
+            w += 1
+    for i in range(1 + k, n - k):  # заполнение вниз
+        if matr[i][m - k - 1] == 0:
+            matr[i][m - k - 1] = w 
+            w += 1
+    for j in range(m - k - 2, k - 1, -1):  # заполнение влево
+        if matr[n - k - 1][j] == 0:
+            matr[n - k - 1][j] = w 
+            w += 1
+    for i in range(n - k - 2, k, -1):  # заполнение вверх
+        if matr[i][k] == 0:
+            matr[i][k] = w 
+            w += 1
+for i in range(n):  # вывод матрицы
+    for j in range(m):
+        print(str(matr[i][j]).ljust(3), end=' ')
+    print()
